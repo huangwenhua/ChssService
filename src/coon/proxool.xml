@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<something-else-entirely>
+  <proxool>
+    <alias>sqlserver</alias>
+    <driver-url>jdbc:sqlserver://192.168.5.4:1433;databaseName=Chss_New</driver-url>
+    <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class> 
+    <driver-properties>
+      <property name="user" value="sa"/>
+      <property name="password" value="admin2013!4"/>
+    </driver-properties>
+    <maximum-connection-count>100</maximum-connection-count>    
+    <house-keeping-sleep-time>30000</house-keeping-sleep-time>  
+    <prototype-count>15</prototype-count>  
+    <minimum-connection-count>5</minimum-connection-count>
+    <!--prototype-count>4</prototype-count-->
+    <maximum-active-time>100</maximum-active-time>
+    <house-keeping-test-sql>select * from t_error</house-keeping-test-sql>
+  </proxool>
+</something-else-entirely>

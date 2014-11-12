@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+  <service />
+  <service>
+    <serviceClass>org.tempuri.JK_XZImpl</serviceClass>
+    <wsdlURL>http://csz.zjwst.gov.cn:8574/WebSer/JK_XZ.asmx?wsdl</wsdlURL>
+    <serviceFactory>org.codehaus.xfire.jaxb2.JaxbServiceFactory</serviceFactory>
+  </service>
+  <service />
+</beans>
+

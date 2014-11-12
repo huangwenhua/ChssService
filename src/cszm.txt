@@ -1,0 +1,25 @@
+CREATE TABLE [dbo].[T_CSZM](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[CSBH] [varchar](500) NOT NULL,
+	[CSZM] [nvarchar](max) NOT NULL,
+	[date] [datetime] NULL,
+	[zt] [int] NULL,
+ CONSTRAINT [PK_T_CSZM] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+
+CREATE TABLE [dbo].[T_CSZM_ZDBA](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[lzcode] [varchar](255) NOT NULL,
+	[lzname] [varchar](7168) NOT NULL,
+	[jtcode] [varchar](255) NOT NULL,
+	[jtname] [varchar](7168) NOT NULL,
+ CONSTRAINT [PK_T_CSZM_ZDBA] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]

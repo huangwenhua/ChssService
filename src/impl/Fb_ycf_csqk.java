@@ -34,7 +34,8 @@ public class Fb_ycf_csqk implements BuildingXml{
 	
 	public Map<String, String> createxml( String startTime,String endTime){
 		Connection con = JdbcPool.getConnection();
-		String sql = "select * from " + tbName + " where jlzt != 9 AND XGRQ > ? AND XGRQ <= ?";
+		//String sql = "select * from " + tbName + " where jlzt != 9 AND XGRQ > ? AND XGRQ <= ?";
+		String sql = "select a.*,b.FMFS from FB_YCF_CSQK a,FB_YCF_XSECSQK b where a.jlzt != 9 AND a.XGRQ > ? AND a.XGRQ <= ? AND a.YKBH=b.YKBH AND b.jlzt != 9";
 		PreparedStatement pspm = null;
 		ResultSet rs = null;
 		Map<String, String> xmlMap = new HashMap<String, String>();
@@ -113,7 +114,8 @@ public class Fb_ycf_csqk implements BuildingXml{
 				String LITTER_SIZE = "";
 				
 				//分娩方式
-				String CHILDBIRTH = "";
+				String FMFS = rs.getString("FMFS");
+				String CHILDBIRTH = CHILDBIRTH(FMFS);
 				
 				//剖宫产原因
 				String CESAREAN_SECTION = "";
@@ -327,6 +329,41 @@ public class Fb_ycf_csqk implements BuildingXml{
 			return "1";
 		return "9";
 	}
+	
+	/**
+	中心系统：
+	值	值含义	说    明
+	1	头位阴道自然分娩
+	2	臀助产
+	3	臀牵引
+	4	胎头牵引
+	5	产钳
+	6	临产前剖宫产
+	7	临产后剖宫产
+	8	毁胎术
+	9	其他
+	99	不详
+	
+	业务系统:
+	1	头位阴道自然分娩
+	2	臀助产
+	3	臀牵引
+	4	胎头牵引
+	5	产钳
+	6	临产前剖宫产
+	7	临产后剖宫产
+	8	毁胎术
+	9	其他
+	99	不详
+
+	 **/
+	private String CHILDBIRTH(String code){
+		if(code == null || code.trim().equals(""))
+			return "99";
+		return code;
+	}
+	
+	
 	
 	/**
 		中心系统:

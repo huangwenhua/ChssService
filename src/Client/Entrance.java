@@ -161,7 +161,7 @@ public class Entrance {
 			logger.info("start bill [" + tbName + "]...");
 			try {
 				bx = (Bill) Class.forName("bill." + tbName).newInstance();
-				xml = bx.createxml(new SimpleDateFormat("yyyyMMdd").format(this.startTime)); 
+				xml = bx.createxml( new SimpleDateFormat("yyyyMMdd").format(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(this.startTime)) ); 
 				result.doResultBill(xml, tbName, tbName);
 			} catch (Exception e) {
 				logger.error("translate class error tbname = " + tbName + " " + e.getMessage());
@@ -190,7 +190,9 @@ public class Entrance {
 	
 	public static void main(String args[]){
 //		EhcacheUtil.getInstance().initCache();
-//		Entrance e = new Entrance("2010-01-01 00:00:00","2010-12-31 23:59:59");
-//		e.doInfo();
+		Entrance e = new Entrance("2010-01-01 00:00:00","2010-12-31 23:59:59");
+		e.doInfo();
+		
+		e.doBill();
 	}
 }

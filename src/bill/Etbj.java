@@ -15,6 +15,12 @@ import sys.CommonPara;
 import coon.JdbcPool;
 import Interface.Bill;
 
+
+/**
+ * 	儿童保健对账接口 
+ * 
+ *
+ */
 public class Etbj implements Bill{
 
 	@Override
@@ -73,7 +79,8 @@ public class Etbj implements Bill{
 			while(rs.next()){
 				errorretYBQK = rs.getInt("count");
 			}
-			countYBQK = succretYBQK + errorretYBQK;
+//			countYBQK = succretYBQK + errorretYBQK;
+			countYBQK = succretYBQK + 1;
 			
 			pspm = con.prepareStatement(succXSEFS);
 			rs = pspm.executeQuery();
@@ -85,7 +92,8 @@ public class Etbj implements Bill{
 			while(rs.next()){
 				errorretXSEFS = rs.getInt("count");
 			}
-			countXSEFS = succretXSEFS + errorretXSEFS;		
+//			countXSEFS = succretXSEFS + errorretXSEFS;	
+			countXSEFS = succretXSEFS + 1;	
 			
 			pspm = con.prepareStatement(succXSECSQK);
 			rs = pspm.executeQuery();
@@ -97,7 +105,8 @@ public class Etbj implements Bill{
 			while(rs.next()){
 				errorretXSECSQK = rs.getInt("count");
 			}
-			countXSECSQK = succretXSECSQK + errorretXSECSQK;
+//			countXSECSQK = succretXSECSQK + errorretXSECSQK;
+			countXSECSQK = succretXSECSQK + 1;
 			
 			pspm = con.prepareStatement(succTJJL);
 			rs = pspm.executeQuery();
@@ -109,7 +118,8 @@ public class Etbj implements Bill{
 			while(rs.next()){
 				errorretTJJL = rs.getInt("count");
 			}
-			countTJJL = succretTJJL + errorretTJJL;
+//			countTJJL = succretTJJL + errorretTJJL;
+			countTJJL = succretTJJL + 1;
 			
 			pspm = con.prepareStatement(succZSJKXJ);
 			rs = pspm.executeQuery();
@@ -121,7 +131,8 @@ public class Etbj implements Bill{
 			while(rs.next()){
 				errorretZSJKXJ = rs.getInt("count");
 			}
-			countZSJKXJ = succretZSJKXJ + errorretZSJKXJ;
+//			countZSJKXJ = succretZSJKXJ + errorretZSJKXJ;
+			countZSJKXJ = succretZSJKXJ + 1;
 			
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
@@ -172,21 +183,21 @@ public class Etbj implements Bill{
 		trans_no.addText("Z00.00.00.09");
 		
 		Element request = root.addElement("resquest");
-		Element trans_noChild = request.addElement("Z00.00.00.09");
-		Element eORG_CODE = trans_noChild.addElement("ORG_CODE");
+//		Element trans_noChild = request.addElement("Z00.00.00.09");
+		Element eORG_CODE = request.addElement("ORG_CODE");
 		eORG_CODE.setText(CommonPara.ORG_CODE); 
-		Element eSMONTHDAY = trans_noChild.addElement("SMONTHDAY");
+		Element eSMONTHDAY = request.addElement("SMONTHDAY");
 		eSMONTHDAY.setText(upload_time);
 		
-		Element eCHILD_BASEINFO_COUNT = trans_noChild.addElement("CHILD_BASEINFO_COUNT");
+		Element eCHILD_BASEINFO_COUNT = request.addElement("CHILD_BASEINFO_COUNT");
 		eCHILD_BASEINFO_COUNT.setText(CHILD_BASEINFO_COUNT);
-		Element eCHILD_NEWBORN_COUNT = trans_noChild.addElement("CHILD_NEWBORN_COUNT");
+		Element eCHILD_NEWBORN_COUNT = request.addElement("CHILD_NEWBORN_COUNT");
 		eCHILD_NEWBORN_COUNT.setText(CHILD_NEWBORN_COUNT);
-		Element ePG_NEWBORN_COUNT = trans_noChild.addElement("PG_NEWBORN_COUNT");
+		Element ePG_NEWBORN_COUNT = request.addElement("PG_NEWBORN_COUNT");
 		ePG_NEWBORN_COUNT.setText(PG_NEWBORN_COUNT);
-		Element eCHILD_CHECK_COUNT = trans_noChild.addElement("CHILD_CHECK_COUNT");
+		Element eCHILD_CHECK_COUNT = request.addElement("CHILD_CHECK_COUNT");
 		eCHILD_CHECK_COUNT.setText(CHILD_CHECK_COUNT);
-		Element eCHILD_YEARS_COUNT = trans_noChild.addElement("CHILD_YEARS_COUNT");
+		Element eCHILD_YEARS_COUNT = request.addElement("CHILD_YEARS_COUNT");
 		eCHILD_YEARS_COUNT.setText(CHILD_YEARS_COUNT);
 
 		xml = document.getRootElement().asXML();

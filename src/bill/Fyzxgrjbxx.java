@@ -42,6 +42,10 @@ public class Fyzxgrjbxx implements Bill{
 		String error = "SELECT count from T_ERROR WHERE date='" + upload_time + "' AND tbName='" + tbName + "'" ;
 		int errorret = 0;
 		int count = 0;
+		
+		String succCszm = "SELECT count from T_SUCC WHERE date='" + upload_time + "' AND tbName='T_CSZM'" ;
+		int countCszm = 0;
+		
 		PreparedStatement pspm = null;
 		ResultSet rs = null;
 		String xml = null;
@@ -66,7 +70,15 @@ public class Fyzxgrjbxx implements Bill{
 				errorret = rs.getInt("count");
 			}
 			
-			count = succret + errorret;
+//			count = succret + errorret;
+			count = succret + 1;
+			
+			pspm = con.prepareStatement(succCszm);
+			rs = pspm.executeQuery();
+			while (rs.next()) {
+				countCszm = rs.getInt("count");
+			}
+			countCszm = countCszm + 1;
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
 		}finally{
@@ -98,6 +110,7 @@ public class Fyzxgrjbxx implements Bill{
 			}		
 		}
 		String MCHS_COUNT = String.valueOf(count);
+		String BIRTH_COUNT= String.valueOf(countCszm);
 		
 		Document document = DocumentHelper.createDocument();	
 		Element root = document.addElement("body"); 
@@ -111,13 +124,15 @@ public class Fyzxgrjbxx implements Bill{
 		trans_no.addText("Z00.00.00.07");
 		
 		Element request = root.addElement("resquest");
-		Element trans_noChild = request.addElement("Z00.00.00.07");
-		Element eORG_CODE = trans_noChild.addElement("ORG_CODE");
+//		Element trans_noChild = request.addElement("Z00.00.00.07");
+		Element eORG_CODE = request.addElement("ORG_CODE");
 		eORG_CODE.setText(CommonPara.ORG_CODE); 
-		Element eSMONTHDAY = trans_noChild.addElement("SMONTHDAY");
+		Element eSMONTHDAY = request.addElement("SMONTHDAY");
 		eSMONTHDAY.setText(upload_time);
-		Element eMCHS_COUNT = trans_noChild.addElement("MCHS_COUNT");
+		Element eMCHS_COUNT = request.addElement("MCHS_COUNT");
 		eMCHS_COUNT.setText(MCHS_COUNT);
+		Element eBIRTH_COUNT = request.addElement("BIRTH_COUNT");
+		eBIRTH_COUNT.setText(BIRTH_COUNT);
 		
 		xml = document.getRootElement().asXML();
 		return xml;

@@ -42,7 +42,7 @@ import dictall.DictMap;
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		Test.readxml();
+//		Test.readxml();
 //		Test.test();
 //		Test.cszmCache();
 //		Test.cszm();
@@ -53,7 +53,7 @@ public class Test {
 //		Test.count();
 //		Test.con();
 //		Test.webservice();
-//		Test.spltime("2012-01-01 00:00:00", "2013-2-15 00:00:00");
+		Test.spltime("2012-01-01 00:00:00", "2013-2-15 00:00:00");
 //		Test.daysBetween("2012-01-01 00:00:00", "2013-2-15 00:00:00");
 //		Test.com("2009-01-01 00:00:00","2011-12-5 23:59:59");
 //		Test.nowDate();
@@ -66,6 +66,9 @@ public class Test {
 //			Document doc = reader.read(new File("D:/workspace/ChssService/src/cszm_body.xml"));
 			Document doc = reader.read(new File("src/cszm_body.xml"));
 			System.out.println("aa----");
+			System.out.println(System.getProperty("user.dir"));
+			System.out.println(Thread.currentThread().getContextClassLoader().getResource(".").getPath());
+	
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -15,6 +15,10 @@ import sys.CommonPara;
 import coon.JdbcPool;
 import Interface.Bill;
 
+/**
+ * 妇女专项业务相关数据的对账
+ *
+ */
 public class Fyzx  implements Bill{
 
 	@Override
@@ -91,7 +95,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretYKJC = rs.getInt("count");
 			}
-			countYKJC = succretYKJC + errorretYKJC;
+//			countYKJC = succretYKJC + errorretYKJC;
+			countYKJC = succretYKJC +1  ;
 			
 			pspm = con.prepareStatement(succCCCJ);
 			rs = pspm.executeQuery();
@@ -103,7 +108,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCCCJ = rs.getInt("count");
 			}
-			countCCCJ = succretCCCJ + errorretCCCJ;
+//			countCCCJ = succretCCCJ + errorretCCCJ;
+			countCCCJ = succretCCCJ +1;
 			
 			pspm = con.prepareStatement(succCQJC);
 			rs = pspm.executeQuery();
@@ -115,7 +121,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCQJC = rs.getInt("count");
 			}
-			countCQJC = succretCQJC + errorretCQJC;
+//			countCQJC = succretCQJC + errorretCQJC;
+			countCQJC = succretCQJC + 1;
 			
 			pspm = con.prepareStatement(succCQSC);
 			rs = pspm.executeQuery();
@@ -127,7 +134,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCQSC = rs.getInt("count");
 			}
-			countCQSC = succretCQSC + errorretCQSC;
+//			countCQSC = succretCQSC + errorretCQSC;
+			countCQSC = succretCQSC +1;
 			
 			pspm = con.prepareStatement(succCSQK);
 			rs = pspm.executeQuery();
@@ -139,7 +147,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCSQK = rs.getInt("count");
 			}
-			countCSQK = succretCSQK + errorretCSQK;
+//			countCSQK = succretCSQK + errorretCSQK;
+			countCSQK = succretCSQK +1;
 			
 			pspm = con.prepareStatement(succCHFS);
 			rs = pspm.executeQuery();
@@ -151,7 +160,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCHFS = rs.getInt("count");
 			}
-			countCHFS = succretCHFS + errorretCHFS;
+//			countCHFS = succretCHFS + errorretCHFS;
+			countCHFS = succretCHFS +1;
 			
 			pspm = con.prepareStatement(succXSEFS);
 			rs = pspm.executeQuery();
@@ -163,7 +173,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretXSEFS = rs.getInt("count");
 			}
-			countXSEFS = succretXSEFS + errorretXSEFS;
+//			countXSEFS = succretXSEFS + errorretXSEFS;
+			countXSEFS = succretXSEFS +1;
 			
 			pspm = con.prepareStatement(succCHJC);
 			rs = pspm.executeQuery();
@@ -175,7 +186,8 @@ public class Fyzx  implements Bill{
 			while(rs.next()){
 				errorretCHJC = rs.getInt("count");
 			}
-			countCHJC = succretCHJC + errorretCHJC;
+//			countCHJC = succretCHJC + errorretCHJC;
+			countCHJC = succretCHJC+1;
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
 		}finally{
@@ -228,26 +240,26 @@ public class Fyzx  implements Bill{
 		trans_no.addText("Z00.00.00.08");
 		
 		Element request = root.addElement("resquest");
-		Element trans_noChild = request.addElement("Z00.00.00.08");
-		Element eORG_CODE = trans_noChild.addElement("ORG_CODE");
+//		Element trans_noChild = request.addElement("Z00.00.00.08");
+		Element eORG_CODE = request.addElement("ORG_CODE");
 		eORG_CODE.setText(CommonPara.ORG_CODE); 
-		Element eSMONTHDAY = trans_noChild.addElement("SMONTHDAY");
+		Element eSMONTHDAY = request.addElement("SMONTHDAY");
 		eSMONTHDAY.setText(upload_time);
-		Element ePG_BASEINFO_COUNT = trans_noChild.addElement("PG_BASEINFO_COUNT");
+		Element ePG_BASEINFO_COUNT = request.addElement("PG_BASEINFO_COUNT");
 		ePG_BASEINFO_COUNT.setText(PG_BASEINFO_COUNT);
-		Element ePG_INITCHECK_COUNT = trans_noChild.addElement("PG_INITCHECK_COUNT");
+		Element ePG_INITCHECK_COUNT = request.addElement("PG_INITCHECK_COUNT");
 		ePG_INITCHECK_COUNT.setText(PG_INITCHECK_COUNT);
-		Element ePG_PRENATAL_COUNT = trans_noChild.addElement("PG_PRENATAL_COUNT");
+		Element ePG_PRENATAL_COUNT = request.addElement("PG_PRENATAL_COUNT");
 		ePG_PRENATAL_COUNT.setText(PG_PRENATAL_COUNT);
-		Element ePG_SCREENING_COUNT = trans_noChild.addElement("PG_SCREENING_COUNT");
+		Element ePG_SCREENING_COUNT = request.addElement("PG_SCREENING_COUNT");
 		ePG_SCREENING_COUNT.setText(PG_SCREENING_COUNT);
-		Element ePG_YIELD_COUNT = trans_noChild.addElement("PG_YIELD_COUNT");
+		Element ePG_YIELD_COUNT = request.addElement("PG_YIELD_COUNT");
 		ePG_YIELD_COUNT.setText(PG_YIELD_COUNT);
-		Element ePG_AFTER_COUNT = trans_noChild.addElement("PG_AFTER_COUNT");
+		Element ePG_AFTER_COUNT = request.addElement("PG_AFTER_COUNT");
 		ePG_AFTER_COUNT.setText(PG_AFTER_COUNT);
-		Element ePG_AFTER_CHILD_COUNT = trans_noChild.addElement("PG_AFTER_CHILD_COUNT");
+		Element ePG_AFTER_CHILD_COUNT = request.addElement("PG_AFTER_CHILD_COUNT");
 		ePG_AFTER_CHILD_COUNT.setText(PG_AFTER_CHILD_COUNT);
-		Element ePG_CHECK42_COUNT = trans_noChild.addElement("PG_CHECK42_COUNT");
+		Element ePG_CHECK42_COUNT = request.addElement("PG_CHECK42_COUNT");
 		ePG_CHECK42_COUNT.setText(PG_CHECK42_COUNT);
 		
 		xml = document.getRootElement().asXML();

@@ -15,6 +15,10 @@ import sys.CommonPara;
 import coon.JdbcPool;
 import Interface.Bill;
 
+/**
+ * 体弱儿童管理接口
+ *
+ */
 public class Tretgl implements Bill {
 
 	@Override
@@ -114,7 +118,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretFPZA = rs.getInt("count");
 			}
-			countFPZA = succretFPZA + errorretFPZA;
+//			countFPZA = succretFPZA + errorretFPZA;
+			countFPZA = succretFPZA + 1;
 			
 			pspm = con.prepareStatement(succFPSF);
 			rs = pspm.executeQuery();
@@ -126,7 +131,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretFPSF = rs.getInt("count");
 			}
-			countFPSF = succretFPSF + errorretFPSF;
+//			countFPSF = succretFPSF + errorretFPSF;
+			countFPSF = succretFPSF + 1;
 			
 			pspm = con.prepareStatement(succPXZA);
 			rs = pspm.executeQuery();
@@ -138,7 +144,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretPXZA = rs.getInt("count");
 			}
-			countPXZA = succretPXZA + errorretPXZA;
+//			countPXZA = succretPXZA + errorretPXZA;
+			countPXZA = succretPXZA + 1;
 			
 			pspm = con.prepareStatement(succPXSF);
 			rs = pspm.executeQuery();
@@ -150,7 +157,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretPXSF = rs.getInt("count");
 			}
-			countPXSF = succretPXSF + errorretPXSF;
+//			countPXSF = succretPXSF + errorretPXSF;
+			countPXSF = succretPXSF + 1;
 			
 			pspm = con.prepareStatement(succYYBLZA);
 			rs = pspm.executeQuery();
@@ -162,7 +170,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretYYBLZA = rs.getInt("count");
 			}
-			countYYBLZA = succretYYBLZA + errorretYYBLZA;
+//			countYYBLZA = succretYYBLZA + errorretYYBLZA;
+			countYYBLZA = succretYYBLZA + 1;
 			
 			pspm = con.prepareStatement(succYYBLSF);
 			rs = pspm.executeQuery();
@@ -174,7 +183,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretYYBLSF = rs.getInt("count");
 			}
-			countYYBLSF = succretYYBLSF + errorretYYBLSF;
+//			countYYBLSF = succretYYBLSF + errorretYYBLSF;
+			countYYBLSF = succretYYBLSF + 1;
 			
 			pspm = con.prepareStatement(succGLBZA);
 			rs = pspm.executeQuery();
@@ -186,7 +196,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretGLBZA = rs.getInt("count");
 			}
-			countGLBZA = succretGLBZA + errorretGLBZA;
+//			countGLBZA = succretGLBZA + errorretGLBZA;
+			countGLBZA = succretGLBZA+1 ;
 			
 			pspm = con.prepareStatement(succGLBSF);
 			rs = pspm.executeQuery();
@@ -198,7 +209,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretGLBSF = rs.getInt("count");
 			}
-			countGLBSF = succretGLBSF + errorretGLBSF;
+//			countGLBSF = succretGLBSF + errorretGLBSF;
+			countGLBSF = succretGLBSF + 1;
 			
 			pspm = con.prepareStatement(succXTXXZBZA);
 			rs = pspm.executeQuery();
@@ -210,7 +222,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretXTXXZBZA = rs.getInt("count");
 			}
-			countXTXXZBZA = succretXTXXZBZA + errorretXTXXZBZA;
+//			countXTXXZBZA = succretXTXXZBZA + errorretXTXXZBZA;
+			countXTXXZBZA = succretXTXXZBZA + 1;
 			
 			pspm = con.prepareStatement(succXZBSF);
 			rs = pspm.executeQuery();
@@ -222,7 +235,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretXZBSF = rs.getInt("count");
 			}
-			countXZBSF = succretXZBSF + errorretXZBSF;
+//			countXZBSF = succretXZBSF + errorretXZBSF;
+			countXZBSF = succretXZBSF + 1;
 			
 			pspm = con.prepareStatement(succQTZA);
 			rs = pspm.executeQuery();
@@ -234,7 +248,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretQTZA = rs.getInt("count");
 			}
-			countQTZA = succretQTZA + errorretQTZA;
+//			countQTZA = succretQTZA + errorretQTZA;
+			countQTZA = succretQTZA + 1;
 			
 			pspm = con.prepareStatement(succQTSF);
 			rs = pspm.executeQuery();
@@ -246,7 +261,8 @@ public class Tretgl implements Bill {
 			while(rs.next()){
 				errorretQTSF = rs.getInt("count");
 			}
-			countQTSF = succretQTSF + errorretQTSF;
+//			countQTSF = succretQTSF + errorretQTSF;
+			countQTSF = succretQTSF +1;
 			
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
@@ -304,34 +320,34 @@ public class Tretgl implements Bill {
 		trans_no.addText("Z00.00.00.10");
 		
 		Element request = root.addElement("resquest");
-		Element trans_noChild = request.addElement("Z00.00.00.10");
-		Element eORG_CODE = trans_noChild.addElement("ORG_CODE");
+//		Element trans_noChild = request.addElement("Z00.00.00.10");
+		Element eORG_CODE = request.addElement("ORG_CODE");
 		eORG_CODE.setText(CommonPara.ORG_CODE); 
-		Element eSMONTHDAY = trans_noChild.addElement("SMONTHDAY");
+		Element eSMONTHDAY = request.addElement("SMONTHDAY");
 		eSMONTHDAY.setText(upload_time);
-		Element eCHILD_FAT_COUNT = trans_noChild.addElement("CHILD_FAT_COUNT");
+		Element eCHILD_FAT_COUNT = request.addElement("CHILD_FAT_COUNT");
 		eCHILD_FAT_COUNT.setText(CHILD_FAT_COUNT);
-		Element eCHILD_FAT_VISITS_COUNT = trans_noChild.addElement("CHILD_FAT_VISITS_COUNT");
+		Element eCHILD_FAT_VISITS_COUNT = request.addElement("CHILD_FAT_VISITS_COUNT");
 		eCHILD_FAT_VISITS_COUNT.setText(CHILD_FAT_VISITS_COUNT);
-		Element eCHILD_ANEMIA_COUNT = trans_noChild.addElement("CHILD_ANEMIA_COUNT");
+		Element eCHILD_ANEMIA_COUNT = request.addElement("CHILD_ANEMIA_COUNT");
 		eCHILD_ANEMIA_COUNT.setText(CHILD_ANEMIA_COUNT);
-		Element eCHILD_ANEMIA_VISITS_COUNT = trans_noChild.addElement("CHILD_ANEMIA_VISITS_COUNT");
+		Element eCHILD_ANEMIA_VISITS_COUNT = request.addElement("CHILD_ANEMIA_VISITS_COUNT");
 		eCHILD_ANEMIA_VISITS_COUNT.setText(CHILD_ANEMIA_VISITS_COUNT);
-		Element eCHILD_MP_COUNT = trans_noChild.addElement("CHILD_MP_COUNT");
+		Element eCHILD_MP_COUNT = request.addElement("CHILD_MP_COUNT");
 		eCHILD_MP_COUNT.setText(CHILD_MP_COUNT); 
-		Element eCHILD_MP_VISITS_COUNT = trans_noChild.addElement("CHILD_MP_VISITS_COUNT");
+		Element eCHILD_MP_VISITS_COUNT = request.addElement("CHILD_MP_VISITS_COUNT");
 		eCHILD_MP_VISITS_COUNT.setText(CHILD_MP_VISITS_COUNT);
-		Element eCHILD_RICKETS_COUNT = trans_noChild.addElement("CHILD_RICKETS_COUNT");
+		Element eCHILD_RICKETS_COUNT = request.addElement("CHILD_RICKETS_COUNT");
 		eCHILD_RICKETS_COUNT.setText(CHILD_RICKETS_COUNT);
-		Element eCHILD_RICKETS_VISITS_COUNT = trans_noChild.addElement("CHILD_RICKETS_VISITS_COUNT");
+		Element eCHILD_RICKETS_VISITS_COUNT = request.addElement("CHILD_RICKETS_VISITS_COUNT");
 		eCHILD_RICKETS_VISITS_COUNT.setText(CHILD_RICKETS_VISITS_COUNT);
-		Element eCHILD_CH_COUNT = trans_noChild.addElement("CHILD_CH_COUNT");
+		Element eCHILD_CH_COUNT = request.addElement("CHILD_CH_COUNT");
 		eCHILD_CH_COUNT.setText(CHILD_CH_COUNT);
-		Element eCHILD_CH_VISITS_COUNT = trans_noChild.addElement("CHILD_CH_VISITS_COUNT");
+		Element eCHILD_CH_VISITS_COUNT = request.addElement("CHILD_CH_VISITS_COUNT");
 		eCHILD_CH_VISITS_COUNT.setText(CHILD_CH_VISITS_COUNT);
-		Element eCHILD_OTHER_COUNT = trans_noChild.addElement("CHILD_OTHER_COUNT");
+		Element eCHILD_OTHER_COUNT = request.addElement("CHILD_OTHER_COUNT");
 		eCHILD_OTHER_COUNT.setText(CHILD_OTHER_COUNT);
-		Element eCHILD_OTHER_VISITS_COUNT = trans_noChild.addElement("CHILD_OTHER_VISITS_COUNT");
+		Element eCHILD_OTHER_VISITS_COUNT = request.addElement("CHILD_OTHER_VISITS_COUNT");
 		eCHILD_OTHER_VISITS_COUNT.setText(CHILD_OTHER_VISITS_COUNT);
 		
 		xml = document.getRootElement().asXML();

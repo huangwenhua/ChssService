@@ -55,9 +55,11 @@ public class Result {
 	}
 	
 	public void doResultBill(String xml, String tbName, String key) {
+		logger.info("bil xml:" + xml);
 		String retxml = WebServiceUtil.invorkBill(xml,tbName,key);
 		if (null == retxml)
 			return;
+		logger.info("bill return xml:" + retxml);
 		Map<String, String> map = ParseXmlUtil.parsexml(retxml);
 		String retCode = map.get("retCode");
 		if ("0".equals(retCode)) {
@@ -69,5 +71,7 @@ public class Result {
 			logger.error("表名：" + tbName + ",主键：" + key + ",处理失败！" + "失败信息：" + map.get("retInfo"));
 		}
 	}
+	
+
 	
 }

@@ -48,10 +48,13 @@ public class InvorkJob implements Job {
 			logger.info("==================startTime = " + startTime + ", endTime = " + endTime + "====================");
 			entran = new Entrance(startTime.toString(), endTime.toString());
 			entran.doInfo();
+			
 			logger.info("==================upload end====================");
 			
 			Client client = new Client();
 			client.doInfo();
+			
+			entran.doBill();
 			
 		}else{
 	    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

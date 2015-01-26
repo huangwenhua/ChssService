@@ -1,7 +1,7 @@
 package sys;
 
 public class CommonPara {
-	public final static String ORG_CODE = "41952989"; //宁波市妇女儿童医院
+	public final static String ORG_CODE = "419529894"; //宁波市妇女儿童医院
 	
 	public final static String ROOT = "E:/dhcc/workspace/ChssService/";
 	

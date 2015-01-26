@@ -42,7 +42,7 @@ public class MainEntrance {
 			job = JobBuilder.newJob(InvorkJob.class).withIdentity("job1", "group1").build();
 			job.getJobDataMap().put("startTime", null);
 			job.getJobDataMap().put("endTime", null);
-			trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0 0 1 * * ?")).build();
+			trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "group1").withSchedule(CronScheduleBuilder.cronSchedule("0 0 23 * * ?")).build();
 			sched.scheduleJob(job, trigger);
 		} else {
 			/**

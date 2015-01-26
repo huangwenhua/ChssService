@@ -8,6 +8,13 @@ import org.apache.log4j.Logger;
 
 import util.ErrorUtil;
 
+import java.net.URL;
+import java.net.HttpURLConnection;
+import org.codehaus.xfire.client.Client;
+
+import bussiness.bbb.ReconciliationServiceClient;
+import bussiness.bbb.ReconciliationServiceSoap;
+
 /**
  * <p>标题: WebServiceUtil.java</p>
  * <p>业务描述:发送WebService请求工具类</p>
@@ -28,7 +35,8 @@ public class WebServiceUtil {
 	/**
 	 * 对账地址
 	 */
-	private static final String URLbill = "http://172.18.0.22:7879/fybj_dpl_countbill/services/ReconciliationService?wsdl";
+	//private static final String URLbill = "http://172.18.0.22:7879/fybj_dpl_countbill/services/ReconciliationService?wsdl";
+	private static final String URLbill = "http://192.168.75.79:3031/ReconciliationService.asmx";
 	
 	/**
 	 * 命名空间
@@ -81,19 +89,9 @@ public class WebServiceUtil {
 	}
 	
 	public static String invorkBill(String xml, String tbName, String key) {
-		Call call;
 		try {
-			call = (Call) service.createCall();
-			call.setTargetEndpointAddress(new java.net.URL(URLbill));
-			call.setUseSOAPAction(true);
-			call.setSOAPActionURI(NAMESPACE + ACTIONURL); // action uri
-			call.setOperationName(new QName(NAMESPACE, METHOD));// 设置要调用哪个方法
-			call.addParameter(
-					new QName(NAMESPACE, "XmlString"), // 设置要传递的参数
-					org.apache.axis.encoding.XMLType.XSD_STRING,
-					javax.xml.rpc.ParameterMode.IN);
-			call.setReturnType(org.apache.axis.encoding.XMLType.XSD_STRING); // 要返回的数据类型
-			return (String) call.invoke(new Object[] { xml });// 调用方法并传递参数
+			ReconciliationServiceSoap jk = new ReconciliationServiceClient().getReconciliationServiceSoap(URLbill);
+			return jk.process(xml);
 		} catch (Exception e) {
 			if ("Connection timed out: connect".equals(e.getMessage())) {
 				logger.error("Server Connection error " + e.getMessage());
@@ -106,5 +104,10 @@ public class WebServiceUtil {
 			return null;
 		}
 	}
+	
+	 public static void main(String[] args)  {
+		 String xml = "";
+		 WebServiceUtil.invorkBill(xml, "test", "test");
+	 }
 	
 }

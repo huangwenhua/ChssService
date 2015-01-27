@@ -65,6 +65,7 @@ public class Etbj implements Bill{
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretYBQK = rs.getInt("count");
+				succretYBQK = succretYBQK +1;
 			}
 			try {
 				if (rs != null) {
@@ -80,12 +81,13 @@ public class Etbj implements Bill{
 				errorretYBQK = rs.getInt("count");
 			}
 //			countYBQK = succretYBQK + errorretYBQK;
-			countYBQK = succretYBQK + 1;
+			countYBQK = succretYBQK;
 			
 			pspm = con.prepareStatement(succXSEFS);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretXSEFS = rs.getInt("count");
+				succretXSEFS = succretXSEFS + 1;
 			}
 			pspm = con.prepareStatement(errorXSEFS);
 			rs = pspm.executeQuery();
@@ -93,12 +95,13 @@ public class Etbj implements Bill{
 				errorretXSEFS = rs.getInt("count");
 			}
 //			countXSEFS = succretXSEFS + errorretXSEFS;	
-			countXSEFS = succretXSEFS + 1;	
+			countXSEFS = succretXSEFS ;
 			
 			pspm = con.prepareStatement(succXSECSQK);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretXSECSQK = rs.getInt("count");
+				succretXSECSQK = succretXSECSQK + 1;
 			}
 			pspm = con.prepareStatement(errorXSECSQK);
 			rs = pspm.executeQuery();
@@ -106,12 +109,13 @@ public class Etbj implements Bill{
 				errorretXSECSQK = rs.getInt("count");
 			}
 //			countXSECSQK = succretXSECSQK + errorretXSECSQK;
-			countXSECSQK = succretXSECSQK + 1;
+			countXSECSQK = succretXSECSQK;
 			
 			pspm = con.prepareStatement(succTJJL);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretTJJL = rs.getInt("count");
+				succretTJJL =succretTJJL + 1;
 			}
 			pspm = con.prepareStatement(errorTJJL);
 			rs = pspm.executeQuery();
@@ -119,12 +123,13 @@ public class Etbj implements Bill{
 				errorretTJJL = rs.getInt("count");
 			}
 //			countTJJL = succretTJJL + errorretTJJL;
-			countTJJL = succretTJJL + 1;
+			countTJJL = succretTJJL;
 			
 			pspm = con.prepareStatement(succZSJKXJ);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretZSJKXJ = rs.getInt("count");
+				succretZSJKXJ= succretZSJKXJ + 1;
 			}
 			pspm = con.prepareStatement(errorZSJKXJ);
 			rs = pspm.executeQuery();
@@ -132,7 +137,7 @@ public class Etbj implements Bill{
 				errorretZSJKXJ = rs.getInt("count");
 			}
 //			countZSJKXJ = succretZSJKXJ + errorretZSJKXJ;
-			countZSJKXJ = succretZSJKXJ + 1;
+			countZSJKXJ = succretZSJKXJ;
 			
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());

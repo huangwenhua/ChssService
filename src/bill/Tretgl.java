@@ -104,6 +104,7 @@ public class Tretgl implements Bill {
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretFPZA = rs.getInt("count");
+				succretFPZA = succretFPZA + 1;
 			}
 			try {
 				if (rs != null) {
@@ -119,12 +120,13 @@ public class Tretgl implements Bill {
 				errorretFPZA = rs.getInt("count");
 			}
 //			countFPZA = succretFPZA + errorretFPZA;
-			countFPZA = succretFPZA + 1;
+			countFPZA = succretFPZA ;
 			
 			pspm = con.prepareStatement(succFPSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretFPSF = rs.getInt("count");
+				succretFPSF = succretFPSF + 1;
 			}
 			pspm = con.prepareStatement(errorFPSF);
 			rs = pspm.executeQuery();
@@ -132,12 +134,13 @@ public class Tretgl implements Bill {
 				errorretFPSF = rs.getInt("count");
 			}
 //			countFPSF = succretFPSF + errorretFPSF;
-			countFPSF = succretFPSF + 1;
+			countFPSF = succretFPSF ;
 			
 			pspm = con.prepareStatement(succPXZA);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretPXZA = rs.getInt("count");
+				succretPXZA = succretPXZA + 1;
 			}
 			pspm = con.prepareStatement(errorPXZA);
 			rs = pspm.executeQuery();
@@ -145,12 +148,13 @@ public class Tretgl implements Bill {
 				errorretPXZA = rs.getInt("count");
 			}
 //			countPXZA = succretPXZA + errorretPXZA;
-			countPXZA = succretPXZA + 1;
+			countPXZA = succretPXZA ;
 			
 			pspm = con.prepareStatement(succPXSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretPXSF = rs.getInt("count");
+				succretPXSF = succretPXSF + 1;
 			}
 			pspm = con.prepareStatement(errorPXSF);
 			rs = pspm.executeQuery();
@@ -158,12 +162,13 @@ public class Tretgl implements Bill {
 				errorretPXSF = rs.getInt("count");
 			}
 //			countPXSF = succretPXSF + errorretPXSF;
-			countPXSF = succretPXSF + 1;
+			countPXSF = succretPXSF;
 			
 			pspm = con.prepareStatement(succYYBLZA);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretYYBLZA = rs.getInt("count");
+				succretYYBLZA = succretYYBLZA + 1;
 			}
 			pspm = con.prepareStatement(errorYYBLZA);
 			rs = pspm.executeQuery();
@@ -171,12 +176,13 @@ public class Tretgl implements Bill {
 				errorretYYBLZA = rs.getInt("count");
 			}
 //			countYYBLZA = succretYYBLZA + errorretYYBLZA;
-			countYYBLZA = succretYYBLZA + 1;
+			countYYBLZA = succretYYBLZA;
 			
 			pspm = con.prepareStatement(succYYBLSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretYYBLSF = rs.getInt("count");
+				succretYYBLSF = succretYYBLSF + 1;
 			}
 			pspm = con.prepareStatement(errorYYBLSF);
 			rs = pspm.executeQuery();
@@ -184,12 +190,13 @@ public class Tretgl implements Bill {
 				errorretYYBLSF = rs.getInt("count");
 			}
 //			countYYBLSF = succretYYBLSF + errorretYYBLSF;
-			countYYBLSF = succretYYBLSF + 1;
+			countYYBLSF = succretYYBLSF;
 			
 			pspm = con.prepareStatement(succGLBZA);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretGLBZA = rs.getInt("count");
+				succretGLBZA = succretGLBZA + 1;
 			}
 			pspm = con.prepareStatement(errorGLBZA);
 			rs = pspm.executeQuery();
@@ -197,12 +204,13 @@ public class Tretgl implements Bill {
 				errorretGLBZA = rs.getInt("count");
 			}
 //			countGLBZA = succretGLBZA + errorretGLBZA;
-			countGLBZA = succretGLBZA+1 ;
+			countGLBZA = succretGLBZA;
 			
 			pspm = con.prepareStatement(succGLBSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretGLBSF = rs.getInt("count");
+				succretGLBSF = succretGLBSF + 1;
 			}
 			pspm = con.prepareStatement(errorGLBSF);
 			rs = pspm.executeQuery();
@@ -210,12 +218,13 @@ public class Tretgl implements Bill {
 				errorretGLBSF = rs.getInt("count");
 			}
 //			countGLBSF = succretGLBSF + errorretGLBSF;
-			countGLBSF = succretGLBSF + 1;
+			countGLBSF = succretGLBSF;
 			
 			pspm = con.prepareStatement(succXTXXZBZA);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretXTXXZBZA = rs.getInt("count");
+				succretXTXXZBZA = succretXTXXZBZA + 1;
 			}
 			pspm = con.prepareStatement(errorXTXXZBZA);
 			rs = pspm.executeQuery();
@@ -223,12 +232,13 @@ public class Tretgl implements Bill {
 				errorretXTXXZBZA = rs.getInt("count");
 			}
 //			countXTXXZBZA = succretXTXXZBZA + errorretXTXXZBZA;
-			countXTXXZBZA = succretXTXXZBZA + 1;
+			countXTXXZBZA = succretXTXXZBZA ;
 			
 			pspm = con.prepareStatement(succXZBSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretXZBSF = rs.getInt("count");
+				succretXZBSF = succretXZBSF + 1;
 			}
 			pspm = con.prepareStatement(errorXZBSF);
 			rs = pspm.executeQuery();
@@ -236,12 +246,13 @@ public class Tretgl implements Bill {
 				errorretXZBSF = rs.getInt("count");
 			}
 //			countXZBSF = succretXZBSF + errorretXZBSF;
-			countXZBSF = succretXZBSF + 1;
+			countXZBSF = succretXZBSF ;
 			
 			pspm = con.prepareStatement(succQTZA);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretQTZA = rs.getInt("count");
+				succretQTZA = succretQTZA + 1;
 			}
 			pspm = con.prepareStatement(errorQTZA);
 			rs = pspm.executeQuery();
@@ -249,12 +260,13 @@ public class Tretgl implements Bill {
 				errorretQTZA = rs.getInt("count");
 			}
 //			countQTZA = succretQTZA + errorretQTZA;
-			countQTZA = succretQTZA + 1;
+			countQTZA = succretQTZA ;
 			
 			pspm = con.prepareStatement(succQTSF);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretQTSF = rs.getInt("count");
+				succretQTSF = succretQTSF + 1;
 			}
 			pspm = con.prepareStatement(errorQTSF);
 			rs = pspm.executeQuery();
@@ -262,7 +274,7 @@ public class Tretgl implements Bill {
 				errorretQTSF = rs.getInt("count");
 			}
 //			countQTSF = succretQTSF + errorretQTSF;
-			countQTSF = succretQTSF +1;
+			countQTSF = succretQTSF ;
 			
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());

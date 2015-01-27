@@ -81,6 +81,7 @@ public class Fyzx  implements Bill{
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretYKJC = rs.getInt("count");
+				succretYKJC = succretYKJC + 1;
 			}
 			try {
 				if (rs != null) {
@@ -96,12 +97,13 @@ public class Fyzx  implements Bill{
 				errorretYKJC = rs.getInt("count");
 			}
 //			countYKJC = succretYKJC + errorretYKJC;
-			countYKJC = succretYKJC +1  ;
+			countYKJC = succretYKJC ;
 			
 			pspm = con.prepareStatement(succCCCJ);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCCCJ = rs.getInt("count");
+				succretCCCJ = succretCCCJ + 1;
 			}
 			pspm = con.prepareStatement(errorCCCJ);
 			rs = pspm.executeQuery();
@@ -109,12 +111,13 @@ public class Fyzx  implements Bill{
 				errorretCCCJ = rs.getInt("count");
 			}
 //			countCCCJ = succretCCCJ + errorretCCCJ;
-			countCCCJ = succretCCCJ +1;
+			countCCCJ = succretCCCJ ;
 			
 			pspm = con.prepareStatement(succCQJC);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCQJC = rs.getInt("count");
+				succretCQJC = succretCQJC + 1;
 			}
 			pspm = con.prepareStatement(errorCQJC);
 			rs = pspm.executeQuery();
@@ -122,12 +125,13 @@ public class Fyzx  implements Bill{
 				errorretCQJC = rs.getInt("count");
 			}
 //			countCQJC = succretCQJC + errorretCQJC;
-			countCQJC = succretCQJC + 1;
+			countCQJC = succretCQJC ;
 			
 			pspm = con.prepareStatement(succCQSC);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCQSC = rs.getInt("count");
+				succretCQSC = succretCQSC + 1;
 			}
 			pspm = con.prepareStatement(errorCQSC);
 			rs = pspm.executeQuery();
@@ -135,12 +139,13 @@ public class Fyzx  implements Bill{
 				errorretCQSC = rs.getInt("count");
 			}
 //			countCQSC = succretCQSC + errorretCQSC;
-			countCQSC = succretCQSC +1;
+			countCQSC = succretCQSC;
 			
 			pspm = con.prepareStatement(succCSQK);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCSQK = rs.getInt("count");
+				succretCSQK = succretCSQK + 1;
 			}
 			pspm = con.prepareStatement(errorCSQK);
 			rs = pspm.executeQuery();
@@ -148,12 +153,13 @@ public class Fyzx  implements Bill{
 				errorretCSQK = rs.getInt("count");
 			}
 //			countCSQK = succretCSQK + errorretCSQK;
-			countCSQK = succretCSQK +1;
+			countCSQK = succretCSQK ;
 			
 			pspm = con.prepareStatement(succCHFS);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCHFS = rs.getInt("count");
+				succretCHFS = succretCHFS + 1;
 			}
 			pspm = con.prepareStatement(errorCHFS);
 			rs = pspm.executeQuery();
@@ -161,12 +167,13 @@ public class Fyzx  implements Bill{
 				errorretCHFS = rs.getInt("count");
 			}
 //			countCHFS = succretCHFS + errorretCHFS;
-			countCHFS = succretCHFS +1;
+			countCHFS = succretCHFS ;
 			
 			pspm = con.prepareStatement(succXSEFS);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretXSEFS = rs.getInt("count");
+				succretXSEFS = succretXSEFS + 1;
 			}
 			pspm = con.prepareStatement(errorXSEFS);
 			rs = pspm.executeQuery();
@@ -174,12 +181,13 @@ public class Fyzx  implements Bill{
 				errorretXSEFS = rs.getInt("count");
 			}
 //			countXSEFS = succretXSEFS + errorretXSEFS;
-			countXSEFS = succretXSEFS +1;
+			countXSEFS = succretXSEFS;
 			
 			pspm = con.prepareStatement(succCHJC);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succretCHJC = rs.getInt("count");
+				succretCHJC = succretCHJC + 1;
 			}
 			pspm = con.prepareStatement(errorCHJC);
 			rs = pspm.executeQuery();
@@ -187,7 +195,7 @@ public class Fyzx  implements Bill{
 				errorretCHJC = rs.getInt("count");
 			}
 //			countCHJC = succretCHJC + errorretCHJC;
-			countCHJC = succretCHJC+1;
+			countCHJC = succretCHJC;
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
 		}finally{

@@ -190,8 +190,8 @@ public class Entrance {
 	
 	public static void main(String args[]){
 //		EhcacheUtil.getInstance().initCache();
-		Entrance e = new Entrance("2010-01-01 00:00:00","2010-12-31 23:59:59");
-		e.doInfo();
+		Entrance e = new Entrance("2015-01-25 00:00:00","2015-01-26 00:00:00");
+		//e.doInfo();
 		
 		e.doBill();
 	}

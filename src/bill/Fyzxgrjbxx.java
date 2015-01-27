@@ -54,6 +54,7 @@ public class Fyzxgrjbxx implements Bill{
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				succret = rs.getInt("count");
+				succret = succret + 1;
 			}
 			try {
 				if (rs != null) {
@@ -71,14 +72,15 @@ public class Fyzxgrjbxx implements Bill{
 			}
 			
 //			count = succret + errorret;
-			count = succret + 1;
+			count = succret;
 			
 			pspm = con.prepareStatement(succCszm);
 			rs = pspm.executeQuery();
 			while (rs.next()) {
 				countCszm = rs.getInt("count");
+				countCszm = countCszm + 1;
 			}
-			countCszm = countCszm + 1;
+			countCszm = countCszm;
 		} catch (SQLException e) {
 			logger.error("fail to connect db：" + e.getMessage());
 		}finally{

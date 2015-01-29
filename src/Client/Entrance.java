@@ -161,7 +161,7 @@ public class Entrance {
 			logger.info("start bill [" + tbName + "]...");
 			try {
 				bx = (Bill) Class.forName("bill." + tbName).newInstance();
-				xml = bx.createxml( new SimpleDateFormat("yyyyMMdd").format(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(this.startTime)) ); 
+				xml = bx.createxml( new SimpleDateFormat("yyyyMMdd").format(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(this.endTime)) ); 
 				result.doResultBill(xml, tbName, tbName);
 			} catch (Exception e) {
 				logger.error("translate class error tbname = " + tbName + " " + e.getMessage());

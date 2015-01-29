@@ -470,21 +470,7 @@ public class Eb_bj_tjjl implements BuildingXml{
 		return map;
 	}
 	
-	public static void main(String[] args) throws IOException {
-		Eb_bj_tjjl childCare = new Eb_bj_tjjl();
-		Map<String, String> result = childCare.createxml(
-				"2012-04-28 00:00:00.000", "2012-04-29 00:00:00.000");
-		@SuppressWarnings("rawtypes")
-		Iterator it = result.entrySet().iterator();
-		while (it.hasNext()) {
-			@SuppressWarnings("rawtypes")
-			Map.Entry entry = (Map.Entry) it.next();
-			Object key = entry.getKey();
-			Object value = entry.getValue();
-			System.out.println("key=" + key + " value=" + value);
-		}
 
-	}
 	
 	public String getIsNull(String str){
 		if(str == null){
@@ -579,4 +565,24 @@ public class Eb_bj_tjjl implements BuildingXml{
 		}
 		return code;
 	}
+	
+	
+	
+	public static void main(String[] args) throws IOException {
+//		Eb_bj_tjjl childCare = new Eb_bj_tjjl();
+//		Map<String, String> result = childCare.createxml("2012-04-28 00:00:00.000", "2012-04-29 00:00:00.000");
+//		@SuppressWarnings("rawtypes")
+//		Iterator it = result.entrySet().iterator();
+//		while (it.hasNext()) {
+//			@SuppressWarnings("rawtypes")
+//			Map.Entry entry = (Map.Entry) it.next();
+//			Object key = entry.getKey();
+//			Object value = entry.getValue();
+//			System.out.println("key=" + key + " value=" + value);
+//		}
+		
+
+	}
+	
+	
 }

@@ -169,7 +169,8 @@ public class Eb_tre_glbsf implements BuildingXml{
 				eUPLOAD_TIME.setText(DateUtil.nowDT15());
 
 				xmlString = document.getRootElement().asXML();
-				map.put(LSH, xmlString);
+				//map.put(LSH, xmlString);
+				map.put(getIsNull(GRBJH), xmlString);
 			}
 		}catch (SQLException e) {
 			logger.error("fail to connect db");

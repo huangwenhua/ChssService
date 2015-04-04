@@ -12,7 +12,9 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import sys.CommonUtil;
 import util.DateUtil;
+import util.EhcacheUtil;
 import Interface.BuildingXml;
 import coon.JdbcPool;
 import dictall.DictMap;
@@ -35,7 +37,7 @@ public class Eb_tre_xzbsf implements BuildingXml{
 	public Map<String, String> createxml(String startTime, String endTime) {
 
 		String sql = "SELECT LSH,ZALSH,GRBJH,SFRQ,SFYS,ZG,WYKN,HDHFL,XCG,XP,"
-					+ "XZBC,ZDYJ,QT,DDST,DJRY,DJJGMC FROM EB_TRE_XZBSF "
+					+ "XZBC,ZDYJ,QT,DDST,DJRY,DJJGDM,DJJGMC FROM EB_TRE_XZBSF "
 					+ "WHERE  JLZT != 9 AND XGRQ > ? AND XGRQ <= ?";
 		Map<String, String> map = new HashMap<String, String>();
 		
@@ -100,6 +102,7 @@ public class Eb_tre_xzbsf implements BuildingXml{
 				resultMap.put("REVIEW_DATE", "");
 				resultMap.put("CREATE_EMP_NAME", getValueOf(rs.getString("DJRY")));
 				resultMap.put("CREATE_ORG_NAME", getValueOf(rs.getString("DJJGMC")));
+				resultMap.put("VISITS_ORG_CODE", CommonUtil.isNull(EhcacheUtil.findValue("SYS_ZCJG", CommonUtil.isNull(rs.getString("DJJGDM")))));
 				
 				resultMap.put("UPLOAD_TIME", DateUtil.nowDT15());
 				

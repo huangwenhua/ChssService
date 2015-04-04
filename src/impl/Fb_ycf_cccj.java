@@ -22,6 +22,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
+import sys.CommonUtil;
 import util.DateUtil;
 import util.EhcacheUtil;
 import Interface.BuildingXml;
@@ -232,6 +233,7 @@ public class Fb_ycf_cccj implements BuildingXml{
 		elementMap.put("CREATE_EMP_ID","");
 		elementMap.put("CREATE_EMP_NAME","");
 		elementMap.put("UPLOAD_TIME", DateUtil.nowDT15());
+		elementMap.put("CREATE_ORG_CODE","");
 		return elementMap;
 	}
 
@@ -327,6 +329,7 @@ public class Fb_ycf_cccj implements BuildingXml{
 				elementMap.put("CREATE_ORG_NAME", limitLength100(rs.getString("DJJGMC")));
 				elementMap.put("CREATE_EMP_ID", getCreate_emp_id(rs.getString("DJRYBM")));
 				elementMap.put("CREATE_EMP_NAME", "");
+				elementMap.put("CREATE_ORG_CODE", CommonUtil.isNull(EhcacheUtil.findValue("SYS_ZCJG", CommonUtil.isNull(rs.getString("DJJGDM")))));
 
 				// 将map加入List中
 				mapList.add(elementMap);

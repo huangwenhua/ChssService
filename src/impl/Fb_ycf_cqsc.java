@@ -10,7 +10,9 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import sys.CommonUtil;
 import util.DateUtil;
+import util.EhcacheUtil;
 import util.UnifieUtil;
 import Interface.BuildingXml;
 import coon.JdbcPool;
@@ -93,6 +95,10 @@ public class Fb_ycf_cqsc implements BuildingXml{
 				String DJJGMC = rs.getString("DJJGMC");
 				String CREATE_ORG_NAME = UnifieUtil.null2(DJJGMC);
 				
+				//机构代码
+				String DJJGDM = rs.getString("DJJGDM");
+				String CREATE_ORG_CODE =  CommonUtil.isNull(EhcacheUtil.findValue("SYS_ZCJG", CommonUtil.isNull(DJJGDM))) ;
+				
 				xml =
 					"<body>" +
 					  "<head>" +
@@ -115,6 +121,7 @@ public class Fb_ycf_cqsc implements BuildingXml{
 					      "<CREATE_EMP_NAME>" + CREATE_EMP_NAME + "</CREATE_EMP_NAME>" +
 					      "<CREATE_ORG_NAME>" + CREATE_ORG_NAME + "</CREATE_ORG_NAME>" +
 					      "<UPLOAD_TIME>" + DateUtil.nowDT15() + "</UPLOAD_TIME>" +
+					      "<CREATE_ORG_CODE>" + CREATE_ORG_CODE + "</CREATE_ORG_CODE>" +
 					    "</B04.02.04.00>" +
 					  "</resquest>" +
 					"</body>";

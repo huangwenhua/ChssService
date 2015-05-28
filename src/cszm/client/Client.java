@@ -90,7 +90,7 @@ public class Client {
 		Map<String, String> map = new HashMap<String, String>();
 		Connection con = JdbcPool.getConnection();
 		//String sql = "select  *  from T_CSZM  where date>? and date<=? and zt='0'";
-		String sql = "select  *  from T_CSZM  where zt='0'";
+		String sql = "select top 9759 * from T_CSZM  where zt='0'";
 		PreparedStatement pspm = null;
 		ResultSet rs = null;
 		
@@ -114,6 +114,7 @@ public class Client {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			logger.error("createxml all cszm error:" + e.getMessage());
 			throw new RuntimeException(e);
 		} finally {
 			try {
